@@ -8,16 +8,7 @@ import { useCart } from '../../hooks/useCart';
 
 const Header = (): JSX.Element => {
   const { cart } = useCart();
-  
-  const uniqueItems = cart.reduce((acc, item) => {
-    if (acc.indexOf(item.id) === -1) {
-      acc.push(item.id);
-    }
-
-    return acc;
-  }, [] as number[])
-
-  const cartSize = uniqueItems.length;
+  const cartSize = cart.length;
 
   return (
     <Container>
